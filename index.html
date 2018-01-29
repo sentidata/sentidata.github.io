@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <title>Datasets for Sentiment Analysis</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron mt-3">
+      <h1>Datasets for Sentiment Analysis</h1>
+      <h3><a href='dataset.zip'> Download the datasets here!</a></h3>
+      <h3><a href='label.zip'> Download the labeling app here!</a></h3>
+      <h2>Instructions</h2>
+      <h4>Datasets</h4>
+      <p>The CSV files contains the sentence (column "sentence") and the sentiment expressed (column "oracle"). File "Labeled SO for CoreNLP.txt" contained all the sentences/nodes we labeled for training CoreNLP model, and the sentences are formatted as binary trees, which is required by the CoreNLP SentimentTraining component.</p>
+      <h4>Labeling app</h4>
+      <p>The app is developed with Python 2.7. To run this labeling app, you need to have <code>flask</code> and <code>NLTK</code> python pakcages installed.</p>
+
+      <p>First, you need to run <code>flask initdb</code> in the app folder to create the database.</p>
+      <p>Then, you can dump data into the dataset with <code>python dump_data.py</code>. The script supports to convert Penn Tree Bank (PTB) format texts into database compatible nodes. Text data should be stored in "txt" files in the "dataset" folder. A sentence in PTB format looks like this:<br>
+        <code>(1 (1 (2 (2 Is) (2 there)) (1 (2 (2 any) (2 Library)) (1 (2 in) (1 (2 Java) (1 (2 that) (1 (2 has) (1 (2 (2 Cluster) (2 (2 Heat) (2 Maps))) (2 (2 already) (2 implemented))))))))) (2 ?))</code>
+      <br>
+      Users can use Stanford CoreNLP tool to generate PTB strings for sentences. or more information about Penn Tree Bank, please refer to the website of Stanford CoreNLP: https://nlp.stanford.edu/sentiment/code.html</p>
+
+      <p>Next, you need to run <code>flask run</code> in the app folder to start the labeling app.</p>
+
+      <p>The labeling app allows users to label to random nodes in the database. It also provides a chart for users to view who labels the most nodes.</p>
+
+      <p>After labeling, users can run <code>python training.py</code> to generate the training file compatible with sentiment model trainer of Stanford CoreNLP.</p>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+
+</html>
