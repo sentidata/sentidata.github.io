@@ -31,39 +31,9 @@
 <body>
   <div class="container">
     <div class="jumbotron mt-3">
-      <h1>Datasets for Sentiment Analysis</h1>
-      <h3><a href='dataset.zip'> Download the datasets here!</a></h3>
-      <h3><a href='label.zip'> Download the labeling app here!</a></h3>
-      <h2>Instructions</h2>
-      <h4>Datasets</h4>
-      <p>The CSV files contains the sentence (column "sentence") and the sentiment expressed (column "oracle"). File "Labeled SO for CoreNLP.txt" contained all the sentences/nodes we labeled for training CoreNLP model, and the sentences are formatted as binary trees, which is required by the CoreNLP SentimentTraining component.</p>
-      <h4>Labeling app</h4>
-      <p>The app is developed with Python 2.7. To run this labeling app, you need to have <code>flask</code> and <code>NLTK</code> python pakcages installed.</p>
-
-      <p>First, you need to run <code>flask initdb</code> in the app folder to create the database.</p>
-      <p>Then, you can dump data into the dataset with <code>python dump_data.py</code>. The script supports to convert Penn Tree Bank (PTB) format texts into database compatible nodes. Text data should be stored in "txt" files in the "dataset" folder. A sentence in PTB format looks like this:<br>
-        <code>(1 (1 (2 (2 Is) (2 there)) (1 (2 (2 any) (2 Library)) (1 (2 in) (1 (2 Java) (1 (2 that) (1 (2 has) (1 (2 (2 Cluster) (2 (2 Heat) (2 Maps))) (2 (2 already) (2 implemented))))))))) (2 ?))</code>
-      <br>
-      Users can use Stanford CoreNLP tool to generate PTB strings for sentences. or more information about Penn Tree Bank, please refer to the website of Stanford CoreNLP: https://nlp.stanford.edu/sentiment/code.html</p>
-
-      <p>Next, you need to run <code>flask run</code> in the app folder to start the labeling app.</p>
-
-      <p>The labeling app allows users to label to random nodes in the database. It also provides a chart for users to view who labels the most nodes.</p>
-
-      <p>After labeling, users can run <code>python training.py</code> to generate the training file compatible with sentiment model trainer of Stanford CoreNLP.</p>
-      
-      <h2>License</h2>
-<small>      
-MIT License <br>
-
-Copyright (c) 2018 sentidata <br><br>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br><br>
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br><br>
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br>
-      </small>    </div>
+      <h1>Datasets for Sentiment Analysis in Software Engineering</h1>
+      <h3><a href='artifact.zip'> Download the artifacts here!</a></h3>
+    </div>
   </div>
 
   <!-- Optional JavaScript -->

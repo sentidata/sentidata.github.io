@@ -1,1 +1,0 @@
-# sentidata.github.io
